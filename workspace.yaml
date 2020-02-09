@@ -21,7 +21,7 @@
           "port": 8000
         }
       ],
-      "memoryLimit": "512Mi",
+      "memoryLimit": "1Gi",
       "type": "dockerimage",
       "volumes": [
         {
@@ -30,7 +30,7 @@
         }
       ],
       "alias": "php",
-      "image": "quay.io/timoteo7/che-php7.2:latest"
+      "image": "quay.io/timoteo7/che-php7.2"
     },
     {
       "mountSources": false,
