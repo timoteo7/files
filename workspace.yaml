@@ -1,0 +1,71 @@
+{
+  "metadata": {
+    "name": "wksp-ckne"
+  },
+  "components": [
+    {
+      "id": "redhat/php/latest",
+      "memoryLimit": "1Gi",
+      "type": "chePlugin"
+    },
+    {
+      "id": "redhat/php-debugger/latest",
+      "memoryLimit": "256Mi",
+      "type": "chePlugin"
+    },
+    {
+      "mountSources": true,
+      "endpoints": [
+        {
+          "name": "8000/tcp",
+          "port": 8000
+        }
+      ],
+      "memoryLimit": "512Mi",
+      "type": "dockerimage",
+      "volumes": [
+        {
+          "name": "composer",
+          "containerPath": "/home/user/.composer"
+        }
+      ],
+      "alias": "php",
+      "image": "quay.io/timoteo7/che-php7.2:latest"
+    },
+    {
+      "mountSources": false,
+      "endpoints": [
+        {
+          "name": "db",
+          "port": 3306,
+          "attributes": {
+            "discoverable": "true"
+          }
+        }
+      ],
+      "memoryLimit": "256Mi",
+      "type": "dockerimage",
+      "alias": "mysql",
+      "image": "docker.io/centos/mysql-57-centos7",
+      "env": [
+        {
+          "value": "homestead",
+          "name": "MYSQL_USER"
+        },
+        {
+          "value": "secret",
+          "name": "MYSQL_PASSWORD"
+        },
+        {
+          "value": "secret",
+          "name": "MYSQL_ROOT_PASSWORD"
+        },
+        {
+          "value": "homestead",
+          "name": "MYSQL_DATABASE"
+        }
+      ]
+    }
+  ],
+  "apiVersion": "1.0.0"
+}
