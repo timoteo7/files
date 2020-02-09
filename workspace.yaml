@@ -67,5 +67,18 @@
       ]
     }
   ],
-  "apiVersion": "1.0.0"
+  "apiVersion": "1.0.0",
+  "commands": [
+    {
+      "name": "Criar projeto Laravel",
+      "actions": [
+        {
+          "workdir": "${CHE_PROJECTS_ROOT}",
+          "type": "exec",
+          "command": "composer create-project laravel/laravel tutorial_laravel && cd tutorial_laravel",
+          "component": "php"
+        }
+      ]
+    }
+  ]
 }
