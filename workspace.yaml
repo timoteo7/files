@@ -70,12 +70,23 @@
   "apiVersion": "1.0.0",
   "commands": [
     {
-      "name": "Criar projeto Laravel",
+      "name": " 1 - Criar projeto Laravel",
       "actions": [
         {
           "workdir": "${CHE_PROJECTS_ROOT}",
           "type": "exec",
           "command": "composer create-project laravel/laravel tutorial_laravel && cd tutorial_laravel",
+          "component": "php"
+        }
+      ]
+    },
+        {
+      "name": " 2 - Versionar",
+      "actions": [
+        {
+          "workdir": "${CHE_PROJECTS_ROOT}/tutorial_laravel",
+          "type": "exec",
+          "command": "git init && git add . && git commit -m 'Laravel'",
           "component": "php"
         }
       ]
