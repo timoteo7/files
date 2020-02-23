@@ -97,7 +97,7 @@
         {
           "workdir": "${CHE_PROJECTS_ROOT}/tutorial_laravel",
           "type": "exec",
-          "command": "sed -i "/DB_CONNECTION=/ s/mysql/sqlite/" .env && sed -i "s/\(DB_DATABASE=\)/#\1/" .env && touch database/database.sqlite",
+          "command": 'sed -i "/DB_CONNECTION=/ s/mysql/sqlite/" .env && sed -i "s/\(DB_DATABASE=\)/#\1/" .env && touch database/database.sqlite',
           "component": "php"
         }
       ]
