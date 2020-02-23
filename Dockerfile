@@ -39,7 +39,8 @@ RUN sudo sed -i 's/\/var\/www\/html/\/projects/g'  /etc/apache2/sites-available/
     sudo sed -i 's/\/var\/www/\/projects/g'  /etc/apache2/apache2.conf && \
     sudo sed -i 's/None/All/g' /etc/apache2/sites-available/000-default.conf && \
     echo "ServerName localhost" | sudo tee -a /etc/apache2/apache2.conf && \
-    sudo a2enmod rewrite
+    sudo a2enmod rewrite && \
+    sudo service apache2 restart
 
 # Install the Zend Debugger php module
 RUN sudo wget http://repos.zend.com/zend-server/2018.0/deb_apache2.4/pool/zend-server-php-7.2-common_2018.0.3+b24_amd64.deb && \
